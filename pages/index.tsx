@@ -1,35 +1,35 @@
 import Layout from "../src/components/Layout"
 import Table from "../src/components/Table"
-import Client from "../src/core/clients"
 import Button from "../src/components/Button"
+import Agrup from "../src/core/Agrup"
 
 export default function Home() {
 
-  const clients = [
-    new Client('Ana', 34, '1'),
-    new Client('Paulo', 44, '2'),
-    new Client('Maria', 37, '3'),
+  const agrups = [
+    new Agrup("13","AG-2022200014","304L-2.5MM-ESM-G220-","322", "16:45", "20:00", "15773696", "0", " ", false, "2022200014", 3.25),
+    new Agrup("14", "AG-2022190079", "AL-5754", "210", "20:00", "00:00", "15773696", "0", " ", false, "2022190079", 4)  
   ]
 
-  function clientSelect(Client: Client) {
-    console.log(Client.nome);
+  function clientSelect(Agrup: Agrup) {
+    console.log(Agrup.agrup);
   }
 
-  function clientErase(Client:Client) {
-    console.log(Client.nome);
+  function clientErase(Agrup:Agrup) {
+    console.log(Agrup.agrup);
   }
 
   return (
+
     <div className={`
-      flex flex-col justify-center items-center h-screen
-      bg-gradient-to-r from-gray-800 to-blue-500
-      text-white
+    flex flex-col justify-center items-center h-screen
+    bg-gradient-to-r from-gray-800 to-blue-500
+    text-white
     `}>
         <Layout  title="Cadastro Simples" >
           <div className="justify-end">
-            <Button className="mb-4 rounded-md "> Novo Cliente</Button>
+            <Button className="mb-4 rounded-md">Operador</Button>
           </div>
-          <Table clients={clients} clientSelect={clientSelect} clientErase={clientErase} ></Table>
+          <Table agrups={agrups} clientSelect={clientSelect} clientErase={clientErase} ></Table>
         </Layout> 
 
         <div>

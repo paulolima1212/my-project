@@ -1,4 +1,8 @@
-export default function Title(props) {
+interface TitleProps{
+    children: any
+}
+
+export default function Title(props: TitleProps) {
     return(
         <div className="flex flex-col justify-center">
             <h1 className="py-5 px-2"  >
