@@ -1,0 +1,72 @@
+[{
+"agrupamentos": [{
+"id":"1", 
+"agrup":"AG-2022200199", 
+"mp":"430-2MM-BA-", 
+"client":"648", 
+"ini_plan":"00:00", 
+"fim_plan":"00:15", 
+"leg_cor":"10213316", 
+"leg_font":"0", 
+"start":" ", 
+"status":true, 
+"nAgrup":"2022200199", 
+"tCorte":3
+},
+{
+"id":"2", 
+"agrup":"AG-2022190229", 
+"mp":"DD11-6MM", 
+"client":"648", 
+"ini_plan":"01:30", 
+"fim_plan":"08:30", 
+"leg_cor":"65535", 
+"leg_font":"0", 
+"start":" ", 
+"status":false, 
+"nAgrup":"2022190229", 
+"tCorte":4.2
+},
+{
+"id":"3", 
+"agrup":"AG-2022200233", 
+"mp":"304L-15MM-LQ", 
+"client":"221", 
+"ini_plan":"08:30", 
+"fim_plan":"10:15", 
+"leg_cor":"65535", 
+"leg_font":"0", 
+"start":" ", 
+"status":false, 
+"nAgrup":"2022200233", 
+"tCorte":1.05
+},
+{
+"id":"4", 
+"agrup":"AG-2022210043", 
+"mp":"S235JR-25MM", 
+"client":"97", 
+"ini_plan":"11:00", 
+"fim_plan":"12:00", 
+"leg_cor":"65535", 
+"leg_font":"0", 
+"start":" ", 
+"status":false, 
+"nAgrup":"2022210043", 
+"tCorte":0.6
+},
+{
+"id":"5", 
+"agrup":"AG-2022190143", 
+"mp":"S235JR-4MM-DCP", 
+"client":"264", 
+"ini_plan":"12:00", 
+"fim_plan":"00:00", 
+"leg_cor":"49407", 
+"leg_font":"0", 
+"start":" ", 
+"status":false, 
+"nAgrup":"2022190143", 
+"tCorte":7.2
+}]
+}]

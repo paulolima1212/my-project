@@ -43,6 +43,7 @@ export default function Table(props: TableProps) {
 
     function renderData() {
         return props.agrups?.map((Agrup, i) => {
+            console.log(Agrup.status);
             return (
                 <tr className={`${i % 2 === 0 ? 'bg-purple-400' : 'bg-purple-100'}`} key={Agrup.id}>
                     <td className="text-left p-4 text-3xl">{Agrup.ini_plan}/{Agrup.fim_plan}</td>

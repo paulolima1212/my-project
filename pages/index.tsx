@@ -5,10 +5,22 @@ import Agrup from "../src/core/Agrup"
 
 export default function Home() {
 
-  const agrups = [
-    new Agrup("13","AG-2022200014","304L-2.5MM-ESM-G220-","322", "16:45", "20:00", "15773696", "0", " ", false, "2022200014", 3.25),
-    new Agrup("14", "AG-2022190079", "AL-5754", "210", "20:00", "00:00", "15773696", "0", " ", false, "2022190079", 4)  
-  ]
+
+  const agrups = []
+
+  const loadAgrup = async (data) => {
+      const dados = data[0]["agrupamentos"]
+      for (var i=0; i<dados.length; i++) {
+          agrups.push(new Agrup(dados[i].id, dados[i].agrup, dados[i].mp, dados[i].client, dados[i].ini_plan, dados[i].fim_plan, dados[i].leg_cor, dados[i].leg_font, 
+            dados[i].start, dados[i].status, dados[i].nagrup, dados[i].tcorte))
+      }
+  }
+
+  // Carrega e envia o arquivo JSON para tratamento
+
+  const jsonData= require('../src/files/json/LASER_5040_TM.json');
+  loadAgrup(jsonData)
+
 
   function clientSelect(Agrup: Agrup) {
     console.log(Agrup.agrup);
@@ -25,7 +37,7 @@ export default function Home() {
     bg-gradient-to-r from-gray-800 to-blue-500
     text-white
     `}>
-        <Layout  title="Cadastro Simples" >
+        <Layout  title="AGRUPAMENTO LASER 5040" >
           <div className="justify-end">
             <Button className="mb-4 rounded-md">Operador</Button>
           </div>
