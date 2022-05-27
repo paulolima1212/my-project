@@ -11,11 +11,13 @@ export default class Agrup {
     #status: boolean
     #nagrup: string
     #tcorte: Number
+    #data: string
+    #maq: string
 
 
     constructor(
         id: string, agrup: string, mp: string, client: string, ini_plan: string, fim_plan: string, leg_cor: string,
-        leg_font: string, start: string, status: boolean, nagrup: string, tcorte: Number
+        leg_font: string, start: string, status: boolean, nagrup: string, tcorte: Number, data: string, maq: string
         ) {
         this.#id = id
         this.#agrup = agrup
@@ -29,10 +31,12 @@ export default class Agrup {
         this.#status = status
         this.#nagrup = nagrup
         this.#tcorte = tcorte
+        this.#data = data
+        this.#maq = maq
     }
 
     static void() {
-        return new Agrup('','','','','','','','','',false,'',0)
+        return new Agrup('','','','','','','','','',false,'',0, '','')
     }
 
     get id() {
@@ -82,5 +86,17 @@ export default class Agrup {
     get tcorte() {
         return this.#tcorte
     }
+
+    
+    public get data() {
+        return this.#data
+    }
+
+    
+    public get maq() {
+        return this.#maq
+    }
+    
+    
 
 }

@@ -3,8 +3,8 @@ import { IconeTrash, IconsEdition } from "./Icons"
 
 interface TableProps {
     agrups: Agrup[]
-    clientSelect?: (agrup: Agrup) => void
-    clientErase?: (agrup: Agrup) => void 
+    agrupSelect?: (agrup: Agrup) => void
+    agrupErase?: (agrup: Agrup) => void 
 }
 
 export default function Table(props: TableProps) {
@@ -15,25 +15,25 @@ export default function Table(props: TableProps) {
                 <th className="text-left p-4">INICIO/FIM</th>
                 <th className="text-left p-4">AGRUPAMENTO</th>
                 <th className="text-left p-4">MP</th>
-                <th className="text-left p-4">CLIENTE</th>
+                <th className="text-left p-4">agrupE</th>
                 <th className="text-left p-4">START</th>
                 {showActions ? <th className="p-4">Actions</th> : false}
             </tr>
         )
     }
 
-    const showActions = props.clientErase || props.clientSelect 
+    const showActions = props.agrupErase || props.agrupSelect 
 
     function renderActions(agrup: Agrup) {
         return (
             <td className="text-sm flex">
-                {props.clientSelect ? (
-                    <button onClick={() => props.clientSelect?.(agrup)} className="flex justify-center items-center text-xl">
+                {props.agrupSelect ? (
+                    <button onClick={() => props.agrupSelect?.(agrup)} className="flex justify-center items-center text-xl">
                         {IconsEdition}
                     </button>
                 ) : false }
-                {props.clientErase ? (
-                    <button onClick={() => props.clientErase?.(agrup)} className="flex justify-center items-center text-xl">
+                {props.agrupErase ? (
+                    <button onClick={() => props.agrupErase?.(agrup)} className="flex justify-center items-center text-xl">
                         {IconeTrash}
                     </button>
                 ) : false}
@@ -49,7 +49,7 @@ export default function Table(props: TableProps) {
                     <td className="text-left p-4 text-3xl">{Agrup.ini_plan}/{Agrup.fim_plan}</td>
                     <td className="text-left p-4 text-3xl">{Agrup.agrup}</td>
                     <td className="text-left p-4 text-3xl">{Agrup.mp}</td>
-                    <td className="text-left p-4 text-3xl">{Agrup.client}</td>
+                    <td className="text-left p-4 text-3xl">{Agrup.agrup}</td>
                     <td className="text-left p-4 text-3xl">{Agrup.status}</td>
                     {showActions ? renderActions(Agrup) : false}
                 </tr>

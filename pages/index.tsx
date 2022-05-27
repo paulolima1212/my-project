@@ -11,22 +11,22 @@ export default function Home() {
   const loadAgrup = async (data) => {
       const dados = data[0]["agrupamentos"]
       for (var i=0; i<dados.length; i++) {
-          agrups.push(new Agrup(dados[i].id, dados[i].agrup, dados[i].mp, dados[i].client, dados[i].ini_plan, dados[i].fim_plan, dados[i].leg_cor, dados[i].leg_font, 
-            dados[i].start, dados[i].status, dados[i].nagrup, dados[i].tcorte))
+          agrups.push(new Agrup(dados[i].id, dados[i].agrup, dados[i].mp, dados[i].agrup, dados[i].ini_plan, dados[i].fim_plan, dados[i].leg_cor, dados[i].leg_font, 
+            dados[i].start, dados[i].status, dados[i].nagrup, dados[i].tcorte, dados[i].data, dados[i].maq))
       }
   }
 
   // Carrega e envia o arquivo JSON para tratamento
 
-  const jsonData= require('../src/files/json/LASER_5040_TM.json');
+  const jsonData= require('../src/files/json/LASER_5040.json');
   loadAgrup(jsonData)
 
 
-  function clientSelect(Agrup: Agrup) {
+  function agrupSelect(Agrup: Agrup) {
     console.log(Agrup.agrup);
   }
 
-  function clientErase(Agrup:Agrup) {
+  function agrupErase(Agrup:Agrup) {
     console.log(Agrup.agrup);
   }
 
@@ -41,7 +41,7 @@ export default function Home() {
           <div className="justify-end">
             <Button className="mb-4 rounded-md">Operador</Button>
           </div>
-          <Table agrups={agrups} clientSelect={clientSelect} clientErase={clientErase} ></Table>
+          <Table agrups={agrups} agrupSelect={agrupSelect} agrupErase={agrupErase} ></Table>
         </Layout> 
 
         <div>
